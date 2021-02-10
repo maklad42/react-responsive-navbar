@@ -1,3 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.home,
+.contact,
+.about,
+.shop {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
 .App {
   text-align: center;
 }
