@@ -7,20 +7,30 @@ import Contact from './components/Contact.js';
 import Shop from './components/Shop.js';
 import About from './components/About.js';
 
-function App() {
-  return (
-    <div className="App">
-      <Router>
-        <Navbar />
-        <Switch>
-          <Router exact path="/" component={Home} />
-          <Router exact path="/about" component={About} />
-          <Router exact path="/shop" component={Shop} />
-          <Router exact path="/contact" component={Contact} />
-        </Switch>
-      </Router>
-    </div>
-  );
+class App extends React.Component {
+  // state = {
+  //   open: false,
+  // };
+
+  // setOpen = (op) => {
+  //   console.log('Opened!');
+  // };
+
+  render() {
+    return (
+      <div className="App">
+        <Router>
+          <Navbar />
+          <Switch>
+            <Router exact path="/" component={Home} />
+            <Router exact path="/about" component={About} />
+            <Router exact path="/shop" component={Shop} />
+            <Router exact path="/contact" component={Contact} />
+          </Switch>
+        </Router>
+      </div>
+    );
+  }
 }
 
 export default App;
