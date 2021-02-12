@@ -1,31 +1,31 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.scss';
-import Navbar from './components/Navbar.js';
-import Home from './components/Home.js';
-import Contact from './components/Contact.js';
-import Shop from './components/Shop.js';
-import About from './components/About.js';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Contact from './components/Contact';
+import Shop from './components/Shop';
+import About from './components/About';
 
 class App extends React.Component {
-  // state = {
-  //   open: false,
-  // };
-
-  // setOpen = (op) => {
-  //   console.log('Opened!');
-  // };
+  state = {
+    menuopen: false,
+  };
+  setOpen = (op) => {
+    const menuopen = op;
+    this.setState({ menuopen });
+  };
 
   render() {
     return (
       <div className="App">
         <Router>
-          <Navbar />
+          <Navbar state={this.state} setOpen={this.setOpen} />
           <Switch>
-            <Router exact path="/" component={Home} />
-            <Router exact path="/about" component={About} />
-            <Router exact path="/shop" component={Shop} />
-            <Router exact path="/contact" component={Contact} />
+            <Route path="/" exact component={Home} />
+            <Route path="/about" exact component={About} />
+            <Route path="/shop" exact component={Shop} />
+            <Route path="/contact" exact component={Contact} />
           </Switch>
         </Router>
       </div>
